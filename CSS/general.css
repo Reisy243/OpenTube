@@ -1,0 +1,39 @@
+* {
+	margin: 0%;
+}
+
+header {
+	padding: 10px;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--header);
+}
+
+.flex {
+	display: flex;
+}
+
+input[type="submit"] {
+	cursor: pointer;
+}
+
+.searchBar {
+	font-size: 16px;
+	padding: 5px 10px;
+}
+
+.cards {
+	display: flex;
+	align-items: center;
+	background: black;
+	margin-top: 3%;
+	margin-left: 10%;
+	margin-right: 10%;
+	border-radius: 10px;
+	gap: 10px;
+}
+
+.tumbnail img {
+	width: 120px;
+	height: auto;
+}

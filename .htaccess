@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^results$ results.php [L]
+RewriteRule ^watch$ watch.php [L]
