@@ -3,6 +3,7 @@
 <html lang="en">
 	<head lang="en">
 		<?php
+			require_once './assets/config.php';
 			include './assets/head.php';
 		?>
 	</head>

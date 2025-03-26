@@ -1,7 +1,4 @@
 <?php
-set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT'] . '/assets');
-file_exists($_SERVER['DOCUMENT_ROOT'] . '/assets/config.php') && require 'config.php';
-
 define('BasePath', str_replace($_SERVER['DOCUMENT_ROOT'], '', dirname(__DIR__)) . '/');
 
 $siteName = empty($title) ? Name : $title . " - " . Name;

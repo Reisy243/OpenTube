@@ -2,7 +2,7 @@
 <html lang="en">
 	<head lang="en">
 		<?php
-			const Name = 'OpenTube';
+			define('Name', 'OpenTube');
 			include '../assets/head.php';
 		?>
 	</head>
