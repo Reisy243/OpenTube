@@ -1,0 +1,17 @@
+@font-face {
+	font-family: 'Dosis';
+	src: url(../Fonts/Dosis/Dosis-VariableFont_wght.ttf) format('truetype');
+}
+
+* {
+	font-family: 'Dosis', sans-serif;
+}
+
+h1, h2 {
+	margin-bottom: 3px;
+	margin-top: 15px;
+}
+
+ul {
+	list-style-type: none;
+}

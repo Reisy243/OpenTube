@@ -1,0 +1,56 @@
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 500px;
+	margin: auto;
+}
+
+form img {
+	width: 150px;
+	margin: 15px;
+}
+
+form input {
+	width: 100%;
+	color: var(--font);
+	padding: 20px;
+	border-radius: 5px;
+	margin: 5px auto;
+	background: transparent;
+	box-sizing: border-box;
+	border: 1px solid #EEEEEE;
+}
+
+form input[type="checkbox"] {
+	width: auto;
+	cursor: pointer;
+}
+form input[type="checkbox"][readonly] { cursor: default; }
+
+form input[type="submit"] {
+	background: #CC3300;
+	border: 0;
+}
+
+form input[type="submit"]:hover {
+	background-color: #EB3300;
+	cursor: pointer;
+}
+
+form input[type="submit"]:disabled {
+	background-color: #E06A4A;
+	cursor: default;
+}
+
+.steps {
+	display: flex;
+	gap: 30px;
+	padding-left: 10px;
+}
+
+.password {
+	width: 100%;
+	display: flex;
+	gap: 8px;
+}
