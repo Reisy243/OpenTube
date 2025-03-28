@@ -1,7 +1,7 @@
 <?php
 define('BasePath', str_replace($_SERVER['DOCUMENT_ROOT'], '', dirname(__DIR__)) . '/');
 define('phpMinVer', '5.1.0');
-define('OTVer', 'A0.1.1');
+define('OTVer', 'A1.1.1');
 
 $siteName = empty($title) ? Name : $title . " - " . Name;
 
