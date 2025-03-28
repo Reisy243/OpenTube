@@ -3,19 +3,10 @@
 <div>
 	<ol class="steps">
 		<?php
-			function addStep ($step) {
-				$actual = false;
-				if (isset($GLOBALS['step']) && $GLOBALS['step'] == $step) {
-					$actual = true;
-				}
-				echo '<li>';
-				echo $actual ? '<b><u><i>' : '';
-				echo $step;
-				echo $actual ? '</i></u></b>' : '';
-				echo '</li>';
-			}
-			addStep('General');
-			addStep('Database server');
+			$addStep = fn($step) => print '<li>' . (isset($GLOBALS['step']) && $GLOBALS['step'] == $step ? '<b><u><i>' . $step . '</i></u></b>' : $step) . '</li>';
+			$isAvalible = fn($avalible, $text) => print '<span style="color: #' . ($avalible ? '32CD32' : 'FF6347') . ';"><b><u><i>' . $text . '</i></u></b></span>';
+			$addStep('General');
+			$addStep('Database server');
 		?>
 	</ol>
 </div>

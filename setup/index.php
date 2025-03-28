@@ -3,14 +3,7 @@
 	<head lang="en">
 		<?php
 			include 'partials/head.php';
-			if ($existsConfig) {
-				$msg = 'The configuration file (' . BasePath . 'assets/config.php) already exists';
-			} else {
-				$webServerComp = true;
-				$phpComp = version_compare(PHP_VERSION, phpMinVer, '>=');
-				$pdoComp = extension_loaded('PDO');
-				$pdo_mysqlComp = extension_loaded('pdo_mysql');
-			}
+			$msg = $existsConfig ? 'The configuration file (' . BasePath . 'assets/config.php) already exists' : '';
 		?>
 	</head>
 	<body theme="dark">
@@ -25,20 +18,24 @@
 						<label for="mysql">MySQL or compatible database server</label>
 					</li>
 					<li>
-						<input id="webServer" name="webServer" type="checkbox" <?= $webServerComp ? 'checked' : 'disabled' ?> required readonly>
-						<label for="webServer">Apache web server: <?php isAvalible($webServerComp, isset($_SERVER['SERVER_SOFTWARE']) ? $_SERVER['SERVER_SOFTWARE'] : 'Nginx?'); ?></label>
+						<input id="webServer" name="webServer" type="checkbox" <?= $webServer ? 'checked' : 'disabled' ?> required readonly>
+						<label for="webServer">Apache web server: <?php $isAvalible($webServer, $_SERVER['SERVER_SOFTWARE'] ?? 'Nginx?'); ?></label>
 					</li>
 					<li>
-						<input id="php" name="php" type="checkbox" <?= $phpComp ? 'checked' : 'disabled'; ?> required readonly>
-						<label for="php">PHP <?= phpMinVer ?> or superior: <?php isAvalible($phpComp, PHP_VERSION); ?></label>
+						<input id="php" name="php" type="checkbox" <?= $php ? 'checked' : 'disabled'; ?> required readonly>
+						<label for="php">PHP <?= phpMinVer ?> or superior: <?php $isAvalible($php, PHP_VERSION); ?></label>
 						<ul>
 							<li>
-								<input id="pdo" name="pdo" type="checkbox" <?= $pdoComp ? 'checked' : 'disabled' ?> required readonly>
+								<input id="pdo" name="pdo" type="checkbox" <?= $pdo ? 'checked' : 'disabled' ?> required readonly>
 								<label for="pdo">PHP Data Objects (PDO)</label>
 							</li>
 							<li>
-								<input id="pdo_mysql" name="pdo_mysql" type="checkbox" <?= $pdo_mysqlComp ? 'checked' : 'disabled'; ?> required readonly>
+								<input id="pdo_mysql" name="pdo_mysql" type="checkbox" <?= $pdo_mysql ? 'checked' : 'disabled'; ?> required readonly>
 								<label for="pdo_mysql">PDO MySQL driver (pdo_mysql)</label>
+							</li>
+							<li>
+								<input id="curl" name="curl" type="checkbox" <?= $curl ? 'checked' : 'disabled' ?> required readonly>
+								<label for="curl">PHP cURL extenxion (curl)</label>
 							</li>
 						</ul>
 					</li>
