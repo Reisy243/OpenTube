@@ -1,4 +1,5 @@
 <?php
+//echo '<p>' . $_SERVER['REQUEST_URI'] . '</p>';
 define('Name', 'OpenTube');
 $title = isset($step) ? $step . ' setup' : 'Setup';
 include '../assets/head.php';
@@ -11,12 +12,11 @@ if ($existsConfig) {
 	$php = version_compare(PHP_VERSION, phpMinVer, '>=');
 	$pdo = extension_loaded('PDO');
 	$pdo_mysql = extension_loaded('pdo_mysql');
-	$curl = extension_loaded('curl');
 
-	$canRun = (isset($_POST['mysql']) && $webServer && $php && $pdo && $pdo_mysql && $curl);
+	$canRun = ((isset($_POST['mysql']) ? true : isset($_COOKIE['mysql'])) && $webServer && $php && $pdo && $pdo_mysql);
 	if ($_SERVER['REQUEST_URI'] != BasePath . 'setup/') {
+		isset($_POST['mysql']) && setcookie('mysql', true, time()+3600, "/");
 		include 'check.php';
-		$canRun && $curl = curl_init();
 	}
 }
 ?>

@@ -1,4 +1,4 @@
-<img src="<?= BasePath ?>assets/Images/OTLogo.png" alt="OpenTube logo">
+<img src="<?= BasePath ?>assets/Images/OTLogo.png" alt="<?= Name ?> logo">
 <h1><?= isset($step) ? $step : Name . ' ' . OTVer ?> setup</h1>
 <div>
 	<ol class="steps">

@@ -12,6 +12,6 @@
 				$sendError($curl, 'PHP cURL extenxion');
 			?>
 		</ul>
-		<input type="submit" value="Back">
+		<input id="back" type="submit" value="Back">
 	</form>
 <?php endif; ?>

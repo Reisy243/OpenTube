@@ -4,6 +4,16 @@
 		<?php
 			include 'partials/head.php';
 			$msg = $existsConfig ? 'The configuration file (' . BasePath . 'assets/config.php) already exists' : '';
+			if (isset($_COOKIE['finish'])) {
+				if (true) {
+				} else {
+					$msg = 'Please complete the form.';
+				}
+
+				foreach (array_keys($_COOKIE) as $cookie) {
+					setcookie($cookie, "", time()-3600, "/");
+				}
+			}
 		?>
 	</head>
 	<body theme="dark">
@@ -32,10 +42,6 @@
 							<li>
 								<input id="pdo_mysql" name="pdo_mysql" type="checkbox" <?= $pdo_mysql ? 'checked' : 'disabled'; ?> required readonly>
 								<label for="pdo_mysql">PDO MySQL driver (pdo_mysql)</label>
-							</li>
-							<li>
-								<input id="curl" name="curl" type="checkbox" <?= $curl ? 'checked' : 'disabled' ?> required readonly>
-								<label for="curl">PHP cURL extenxion (curl)</label>
 							</li>
 						</ul>
 					</li>
