@@ -3,8 +3,8 @@
 define('Name', 'OpenTube');
 $title = isset($step) ? $step . ' setup' : 'Setup';
 include '../assets/head.php';
-echo '<link rel="stylesheet" href="' . BasePath . 'assets/CSS/forms.css">';
-$existsConfig = file_exists($_SERVER['DOCUMENT_ROOT'] . '/assets/config.php');
+echo '<link rel="stylesheet" href="' . CSSPath . 'forms.css">';
+$existsConfig = file_exists(BasePath . 'assets/config.php');
 if ($existsConfig) {
 	$_SERVER['REQUEST_URI'] != BasePath . 'setup/' && header('Location: ' . BasePath);
 } else {
